@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arts1_Journal3_marimon</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="cloud"></div>
+        <div class="cloud" style="margin-left: 130px; width: 270px; height: 60px; "></div>
+        <div class="cloud" style="margin-left: 100px; width: 290px;"></div>
+    </div>
+
+    <div>
+        <img src="images/woman_umbrella.png" alt="woman with umbrella" height="200px" style="margin-left: 40px;">
+    </div>
+
+    <script type="text/javascript">
+        let hrElement;
+        let counter = 100;
+        for(let i=0; i < counter; i++) {
+            hrElement = document.createElement("HR")
+            hrElement.style.left = Math.floor(Math.random()*window.innerWidth) + "px";
+            hrElement.style.animationDuration = 0.2 + Math.random() * 0.3 + "s";
+            hrElement.style.animationDelay = Math.random() * 5 + "s";
+            document.body.appendChild(hrElement);
+        }
+    </script>
+</body>
+</html>

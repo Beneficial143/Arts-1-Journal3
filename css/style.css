@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* display: flex; */
+    /* justify-content: center; */
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+    
+}
+
+
+
+hr {
+    width: 50px;
+    border-color: transparent;
+    border-right-color: rgba(255, 255, 255, 0.7);
+    border-right-width: 50px;
+    position: absolute;
+    bottom: 100%;
+    transform-origin: 100% 50%;
+    animation-name: rain;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+hr:nth-child(3n+1) {
+    border-right-color: #0ff;
+}
+hr:nth-child(3n+2) {
+    border-right-color: #0f0;
+}
+hr:nth-child(3n+3) {
+    border-right-color: #f00;
+}
+
+
+
+@keyframes rain {
+    from {
+        transform: rotate(115deg) translateX(0);
+    }
+    to {
+        transform: rotate(115deg) translateX(calc(100vh + 20px));
+    }
+    
+}
+
+
+.container {
+    float: left;
+    position: relative;
+    width: 1600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    margin-top: 130px; 
+
+}
+
+.container .cloud {
+    position: relative;
+    width: 320px;
+    height: 100px;
+    background: #fff;
+    border-radius: 100px;
+    filter: drop-shadow(8px 8px 0 #0005);
+    animation: animateCloud 2s linear infinite;
+    z-index: 1;
+}
+
+
+@keyframes animateCloud {
+    0% {
+        filter: drop-shadow(8px 8px 0 #0001) drop-shadow(0 0 0 #fff);
+    }
+    95% {
+        filter: drop-shadow(8px 8px 0 #0001) drop-shadow(0 0 50px #fff5) brightness(10);
+    }
+}
+
+.container .cloud::before {
+    content: '';
+    position: absolute;
+    
+    top: -50px;
+    left: 40px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #484f59;
+    border-radius: 100px;
+    box-shadow: 90px -10px 0 30px #484f59;
+}
+
+.container .cloud::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #484f59;
+    border-radius: 100px;
+}
+
+.container .cloud .drop {
+    position: absolute;
+    top: 0;
+    background: #05a2eb;
+    width: 2px;
+    height: 10px;
+    transform-origin: bottom;
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) scaleY(1);
+    }
+    70% {
+        transform: translateY(360px) scaleY(1);
+    }
+    80% {
+        transform: translateY(360px) scaleY(0.2);
+    }
+    100% {
+        transform: translateY(360px) scaleY(0.2) scaleX(15);
+    }
+}
