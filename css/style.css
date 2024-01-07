@@ -52,12 +52,11 @@ hr:nth-child(3n+3) {
     
 }
 
-
 .container {
     float: left;
     position: relative;
     width: 1600px;
-    height: 400px;
+    height: 350px;
     display: flex;
     justify-content: center;
     margin-top: 130px; 
